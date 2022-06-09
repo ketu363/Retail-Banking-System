@@ -1,0 +1,100 @@
+﻿@model Valsa.Models.Transaction
+
+@{
+    ViewData["Title"] = "Deposit";
+        Layout = "_Layout1";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    
+    <style>
+
+        .gradient-custom {
+            background: #BBD2C5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+</head>
+<body class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class=" pb-2 pb-md-0 mb-4">Deposit Form</h3><hr />
+                        <form asp-action="Deposit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="account_number" class="controllabel">Account Number</label><br />
+
+                                        <input asp-for="account_number" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.account_number, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="account_pin" class="controllabel">Account Pin</label><br />
+
+                                        <input asp-for="account_pin" class=" form-control" />
+                                        @Html.ValidationMessageFor(m => m.account_pin, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <div class="form-group">
+                                        <label id="Counterparty" asp-for="amount" class="controllabel">Amount to be deposited</label><br />
+
+                                        <input id="Counterparty" asp-for="amount" class=" form-control" />
+                                        <span id="Counterparty" asp-validation-for="amount" class="text-danger"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                              
+                                   
+                           
+                            <div class="form-group">
+                            <input type="submit" value="Deposit"
+                                   class="btn btn-primary" style="border-radius:15px; outline:none ;" />
+                            </div><br />
+                        <b class="text-danger">@ViewBag.message</b>
+                    </form>
+
+
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+                        @section Scripts {
+                            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                        }

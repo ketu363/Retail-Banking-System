@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "7d0e5c00-e8fc-47d3-882e-faa385478d39": {
+      "ProjectGuid": "7d0e5c00-e8fc-47d3-882e-faa385478d39",
+      "DisplayName": "Valsa",
+      "ColorIndex": 0
+    },
+    "5b6475db-00e5-43be-81d0-9519cda9d4bf": {
+      "ProjectGuid": "5b6475db-00e5-43be-81d0-9519cda9d4bf",
+      "DisplayName": "Valsa",
+      "ColorIndex": 1
+    },
+    "825c684b-5f0e-4fbf-8833-9e7cc6063000": {
+      "ProjectGuid": "825c684b-5f0e-4fbf-8833-9e7cc6063000",
+      "DisplayName": "Valsa",
+      "ColorIndex": 2
+    },
+    "835625d7-48e5-49da-810a-e86533a6c957": {
+      "ProjectGuid": "835625d7-48e5-49da-810a-e86533a6c957",
+      "DisplayName": "Valsa",
+      "ColorIndex": 3
+    },
+    "227c1b89-deb3-4873-9f58-8c089c47dd65": {
+      "ProjectGuid": "227c1b89-deb3-4873-9f58-8c089c47dd65",
+      "DisplayName": "Valsa",
+      "ColorIndex": 4
+    },
+    "ff06c896-35f2-4982-aee8-14bd2ca08041": {
+      "ProjectGuid": "ff06c896-35f2-4982-aee8-14bd2ca08041",
+      "DisplayName": "EmployeeService2",
+      "ColorIndex": 5
+    },
+    "012d9cc5-b095-467f-a55c-610a4a370f9d": {
+      "ProjectGuid": "012d9cc5-b095-467f-a55c-610a4a370f9d",
+      "DisplayName": "Valsa",
+      "ColorIndex": 6
+    },
+    "524e5bf8-c9ac-410e-91a5-30cfa0004637": {
+      "ProjectGuid": "524e5bf8-c9ac-410e-91a5-30cfa0004637",
+      "DisplayName": "Valsa",
+      "ColorIndex": 7
+    },
+    "21ab0211-16ea-40e6-ad6f-6cb5c200e044": {
+      "ProjectGuid": "21ab0211-16ea-40e6-ad6f-6cb5c200e044",
+      "DisplayName": "Valsa",
+      "ColorIndex": 8
+    },
+    "353af528-fce8-4737-952c-fab456bb8d78": {
+      "ProjectGuid": "353af528-fce8-4737-952c-fab456bb8d78",
+      "DisplayName": "EmployeeService2",
+      "ColorIndex": 9
+    }
+  },
+  "NextColorIndex": 10
+}

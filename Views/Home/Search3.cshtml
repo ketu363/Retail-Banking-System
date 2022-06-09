@@ -1,0 +1,120 @@
+@model Valsa.Models.ViewModel
+@{
+    ViewData["Title"] = "Customer Details";
+     Layout = "_AdminLayoutPage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Customer Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+
+    <style>
+
+        .gradient-custom {
+            background: #BBD2C5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+</head>
+
+<body class="gradient-custom">
+    <h1 class="display-4 pt-2" style="text-align: center; font-weight: 600;color:white ">Welcome To SWIFT BANK</h1>
+    <br />
+    @using (Html.BeginForm("Search3", "Home",FormMethod.Get))
+    {  
+        <span class="display-7 " style="color:white; padding-left:130px">Please enter Customer Id to view the Details :</span>
+        @Html.TextBox("Search") <input  style="border-radius: 15px"  type="submit" value="View Details"/>
+        <input style="margin-left:28%; border-radius:15px" type="button" value="Create New" onclick="location.href='@Url.Action("CreateAccount", "Home")'"/>  
+    }
+    <div id="details"class="container py-5 h-100">
+        <div class="row justify-content-start align-items-center h-100">
+            <div class="col-6 align-self-lg-start">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class=" pb-2 pb-md-0 mb-4">Personal Details</h3><hr />
+                        @foreach (var customer in Model.CustomerDetails)
+                        {
+                            <dl class="row">
+                                <dt class="col-sm-3">Customer Id</dt>
+                                <dd class="col-sm-9">@customer.customer_id</dd>
+                                <dt class="col-sm-3">First Name</dt>
+                                <dd class="col-sm-9">@customer.first_name</dd>
+                                <dt class="col-sm-3">Last Name</dt>
+                                <dd class="col-sm-9">@customer.last_name</dd>
+                                <dt class="col-sm-3">Gender</dt>
+                                <dd class="col-sm-9">@customer.gender</dd>
+                                <dt class="col-sm-3">DOB</dt>
+                                <dd class="col-sm-9">@customer.dob.ToShortDateString()</dd>
+                                <dt class="col-sm-3">Address</dt>
+                                <dd class="col-sm-9">@customer.address</dd>
+                                <dt class="col-sm-3">Mobile No</dt>
+                                <dd class="col-sm-9">@customer.mobile_number</dd>
+                                <dt class="col-sm-3">Pan No</dt>
+                                <dd class="col-sm-9">@customer.pan_no</dd>
+                                <dt class="col-sm-3">Email ID</dt>
+                                <dd class="col-sm-9">@customer.email</dd>
+
+                            </dl>
+                            <a  class="btn btn-primary col-sm-3" style="border-radius: 15px;"  asp-controller="Home" asp-action="Edit" asp-route-id="@customer.customer_id">Edit Details</a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 align-self-lg-start">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class=" pb-2 pb-md-0 mb-4">Account Details</h3><hr />
+
+                        @foreach (var customer in Model.Accounts)
+                        {
+                    <dl class="row">
+                        <dt class="col-sm-5">Account Number</dt>
+                        <dd class="col-sm-5">@customer.account_number</dd>
+                        <dt class="col-sm-5">Account Pin</dt>
+                        <dd class="col-sm-5">@customer.account_pin</dd>
+                        <dt class="col-sm-5">Balance</dt>
+                        <dd class="col-sm-5">@customer.balance</dd>
+                    </dl>
+
+                        }
+                        @foreach (var customer in Model.CustomerLogins)
+                        {
+                    <dl class="row">
+                        <dt class="col-sm-5">Net Banking ID</dt>
+                        <dd class="col-sm-5">@customer.customer_id</dd>
+                        <dt class="col-sm-5">Password</dt>
+                        <dd class="col-sm-5">@customer.password</dd>
+                    </dl>
+                   }
+                  
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+</html>

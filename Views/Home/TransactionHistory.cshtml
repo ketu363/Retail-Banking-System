@@ -1,0 +1,115 @@
+﻿@model Valsa.Models.ViewModel
+@{
+    ViewData["Title"] = "Transaction History";
+        Layout = "_Layout1";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Transaction History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+
+    <style>
+
+        .gradient-custom {
+            background: #BBD2C5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+</head>
+
+<body class="gradient-custom">
+    <h1 class="display-4 pt-3" style="text-align: center; font-weight: 600;color:white ">Transaction History</h1><br />
+    <br />
+    @using (Html.BeginForm("TransactionHistory", "Home", FormMethod.Get))
+    {
+        <span class="display-7 " style="color:white; padding-left:25%">Please enter account pin to view the details :</span>
+        @Html.TextBox("Search") <input style="border-radius: 15px" type="submit" value="View History" />
+    }
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items">
+            <div class="col-10">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Reference Id
+                                    </th>
+                                    <th>
+                                        Transaction Type
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Counterparty
+                                    </th>
+                                    <th>
+                                        Amount
+                                    </th>
+                                    <th>
+                                        Account Balance
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.transactionlist)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.reference_id
+                                        </td>
+                                        <td>
+                                            @item.transaction_type
+                                        </td>
+                                        <td>
+                                            @item.date_time.ToShortDateString()
+                                        </td>
+                                        <td>
+                                            @item.counterparty
+                                        </td>
+                                        <td>
+                                            @item.amount
+                                        </td>
+                                        <td>
+                                            @item.updated_balance
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+</html>

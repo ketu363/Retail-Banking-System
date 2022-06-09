@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BankingSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <style>
+        li {
+            padding-right: 1rem;
+        }
+
+        #navbar2 {
+            color: black;
+            font-weight: 500;
+            border: 3px solid transparent;
+        }
+
+            #navbar2:hover, #navbar2:focus {
+                color: black;
+                border-bottom: 3px solid red;
+                border-radius: initial;
+            }
+
+            #navbar2:focus {
+                color: darkblue;
+            }
+
+    </style>
+</head>
+<body class="bg-light">
+
+
+    <div class="container">
+        <header class="d-flex justify-content-center mb-4 border-bottom">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a id="navbar2"  asp-controller="Homer" asp-action="Ways" class="nav-link">Ways to bank</a></li>
+                <li class="nav-item"><a id="navbar2" asp-controller="Homer" asp-action="InstaServices" class="nav-link">Insta services </a></li>
+                <li class="nav-item"><a id="navbar2" asp-controller="Homer" asp-action="CBG" class="nav-link">Convenience banking guide</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="container">
+        <h2 class="fw-normal fs-3 badge bg-danger text-wrap">SWIFT Digital Banking</h2>
+        <p class="text-start">
+            Not very long ago, the proximity of the physical location of a bank branch was the extent of convenience available to us all. Today, here's a host of services
+            that can bring banking to your fingertips, making your financial transactions quick, secure and convenient.<br />Pledged to enable you with the best possible banking
+            experience, it is our continued effort to adhere to this mission. Here's persenting our Convenience Banking offerings- so that you make the most of the digital age.
+        </p>
+        <p class="fw-light lh-sm fs-5 text-center badge bg-dark text-wrap " style="width:100%; border-radius:30px;">
+            Bank conveniently, by just using your CRN and password with SWIFT  Net Banking
+        </p>
+        <p style="font-weight:500">What is SWIFT Net Banking?</p>
+        <p>
+            Make banking a pleasure by logging in with your Customer Relationship Number (CRN)
+            and password to enjoy a plethora of services all from the comfort of your digital screen. <a href="#">Click here</a> to know your CRN.
+        </p>
+        <p style="font-weight:500">Why use SWIFT Net Banking?</p>
+        <i class="fas fa-angle-double-right" style="color: #2980b9"></i>  Deposit, withdraw and transfer money online for free and with ease.<br />
+        <i class="fas fa-angle-double-right" style="color: #2980b9 "></i>  Safe and Secure.<br />
+        <i class="fas fa-angle-double-right" style="color: #2980b9 "></i>  Minimum balance of ₹3000/- only.<br />
+        <i class="fas fa-angle-double-right" style="color: #2980b9 "></i>  Instant Online Password Regeneration and unlocking of User ID.<br /><br />
+        <p style="font-weight:500">Where can I go to use SWIFT Net Banking?</p>
+        <p>Simply login to our website <a href="#">www.SWIFT.com</a> to begin enjoying the convenience</p>
+        <hr>
+        </div>
+</body>
+</html>

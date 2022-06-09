@@ -1,0 +1,100 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -SWIFT BankingSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <style>
+        li {
+            padding-right: 1rem;
+        }
+
+        #navbar2 {
+            color: black;
+            font-weight: 500;
+            border: 3px solid transparent;
+        }
+
+            #navbar2:hover, #navbar2:focus {
+                color: black;
+                border-bottom: 3px solid red;
+               border-radius:initial;
+                
+            }
+
+            #navbar2:focus{
+                color:darkblue;
+            }
+
+            #card-link{
+                color:red;
+                font-weight:500;
+                text-decoration:none;
+            }
+
+            .card{
+                border:none;
+            }
+
+        .card:hover {
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container">
+        <header class="d-flex justify-content-center mb-4 border-bottom">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a id="navbar2" asp-controller="Employee" asp-action="Ways" class="nav-link">Ways to bank</a></li>
+                <li class="nav-item"><a id="navbar2" asp-controller="Employee" asp-action="InstaServices" class="nav-link">Insta services </a></li>
+                <li class="nav-item"><a id="navbar2" asp-controller="Employee" asp-action="CBG" class="nav-link">Convenience banking guide</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                    <div class="card" style="width: 22rem;">
+                        <img class="card-img-top" src="~/Images/net-banking-card.jpg" />
+                        <div class="card-body" style="padding:30px">
+                            <h5 style="font-weight:500; font-size:15px;">NET BANKING</h5>
+                            <h3 class="card-title" style="font-weight:400">Immediate Payments</h3><br />
+                            <p class="card-text">Transfer money anytime, anywhere through our internet banking.</p>
+                            <br /><a href="#" id="card-link"  class="stretched-link">Know More <i class="far fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                   
+            </div>
+            <div class="col-sm">
+                    <div class="card" style="width: 22rem;">
+                        <img class="card-img-top" src="~/Images/Service Charges and fees.png" alt="Card image cap">
+                        <div class="card-body" style="padding:30px">
+                            <h5 style="font-weight:500; font-size:15px;">INSTA SERVICES</h5>
+                            <h3 class="card-title" style="font-weight:400">Insta Balance</h3><br />
+                            <p class="card-text">Check your account balance and details with just a click.</p>
+                            <br /><a href="#" id="card-link"  class="stretched-link">Know More <i class="far fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                    
+            </div>
+           <div class="col-sm">
+                   <div class="card" style="width: 22rem;">
+                       <img class="card-img-top" src="~/Images/Statements.jpg">
+                       <div class="card-body" style="padding:30px">
+                           <h5 style="font-weight:500; font-size:15px;">INSTA SERVICES</h5>
+                           <h3 class="card-title" style="font-weight:400">Account Statements</h3><br />
+                           <p class="card-text">Check your account transactions by getting account statements.</p>
+                           <br /><a href="#" id="card-link"  class="stretched-link">Know More <i class="far fa-arrow-alt-circle-right"></i></a>
+                       </div>
+                   </div>
+                    </div>
+                </div>
+    </div>
+</body>
+</html>

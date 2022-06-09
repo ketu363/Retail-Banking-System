@@ -1,0 +1,105 @@
+﻿@model Valsa.Models.FQ
+@{
+    ViewData["Title"] = "Feedback Query";
+    Layout = "_Layout1";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Welcome To ABC </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <style>
+
+            .gradient-custom {
+                background: #BBD2C5; /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+</head>
+
+<body class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class=" pb-2 pb-md-0 mb-4">Feedback/Query</h3><hr />
+
+                        @using (Html.BeginForm("WriteToUs", "Homer"))
+                        {
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="customer_id" class="controllabel">Customer Id</label><br />
+
+                                        <input asp-for="customer_id" class="form-control" />
+                                       
+                                    </div>
+                                </div>
+</div>
+                              <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="Feedback" class="controllabel">Give Feedback</label><br />
+
+                                        <input type="text" style="height:200px;font-size:14pt;" asp-for="Feedback" class=" form-control" />
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="Queries" class="controllabel">Give Query</label><br />
+
+                                        <input type="text" style="height:200px;font-size:14pt;" asp-for="Queries" class="form-control" />
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                              
+
+                                <div class="row">
+
+                                <div class="form-group">
+                                    <input type="submit" value="Submit"
+                                           class="btn btn-primary" style="border-radius:15px; outline:none ; " />
+                                    
+                                </div>
+                               
+                            </div>
+                            <br />
+                            <b class="text-success">@ViewBag.message</b>
+                        }
+
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                        
+</body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+</html>

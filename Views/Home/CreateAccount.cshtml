@@ -1,0 +1,173 @@
+﻿@model Valsa.Models.CustomerDetail
+@{
+    ViewData["Title"] = "Create Account";
+    Layout = "_AdminLayoutPage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Welcome To SWIFT BANK </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <style>
+
+            .gradient-custom {
+                background: #BBD2C5; /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+</head>
+
+<body class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class=" pb-2 pb-md-0 mb-4">Customer Details</h3><hr />
+
+                        @using (Html.BeginForm("CreateAccount", "Home"))
+                        {
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="first_name" class="controllabel">First Name</label><br />
+
+                                        <input asp-for="first_name" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.first_name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="last_name" class="controllabel">Last Name</label><br />
+
+                                        <input asp-for="last_name" class=" form-control" />
+                                        @Html.ValidationMessageFor(m => m.last_name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="dob" class="controllabel">Date of Birth</label><br />
+
+                                        <input type="date" asp-for="dob" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.dob, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="gender" class="control-label">Gender</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input"
+                                                   type="radio"
+                                                   name="gender"
+                                                   value="Female" />Female
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input"
+                                                   type="radio"
+                                                   name="gender"
+                                                   value="Male" />Male
+                                        </div>
+                                        <br />
+                                        @Html.ValidationMessageFor(m => m.gender, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="mobile_number" class="controllabel">Mobile Number</label><br />
+
+                                        <input asp-for="mobile_number" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.mobile_number, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="pan_no" class="controllabel">Pan Id</label><br />
+
+                                        <input asp-for="pan_no" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.pan_no, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="address" class="controllabel">Address</label><br />
+
+                                        <input asp-for="address" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="email" class="controllabel">Email Id </label><br />
+
+                                        <input asp-for="email" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label asp-for="starting_balance" class="controllabel">Starting Balance</label><br />
+
+                                        <input asp-for="starting_balance" class="form-control" />
+                                        @Html.ValidationMessageFor(m => m.starting_balance, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Create Account"
+                                           class="btn btn-primary" style="border-radius:15px; outline:none ; " />
+                                    <a asp-controller="Home" asp-action="Search3" style="float:right">View Details</a>
+                                </div>
+                               
+                            
+                            <br />
+                            <b class="text-success">@ViewBag.message</b>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                        
+</body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+</html>

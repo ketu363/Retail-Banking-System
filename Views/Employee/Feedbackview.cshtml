@@ -1,0 +1,82 @@
+@model IEnumerable<Valsa.Models.FQ>
+
+@{
+    ViewData["Title"] = "Feedbacks/Queries";
+     Layout = "_AdminLayoutPage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <style>
+
+        .gradient-custom {
+            background: #BBD2C5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+</head>
+<body class="gradient-custom">
+    <h1 class="display-4 pt-3" style="text-align: center; font-weight: 600;color:white ">Feedbacks/Queries</h1><br />
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+        <div class="card-body p-4">
+            <table class="table" style="font-size:small"> 
+                <col style="width:40%">
+                <col style="width:40%">
+	<col style="width:40%">
+
+                <thead>
+                    <tr>
+                        <th>
+                            Customer ID
+                        </th>
+                        <th>
+                            Feedbacks
+                        </th>
+                        <th>
+                          Queries
+                        </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.customer_id)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Feedback)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Queries)
+                        </td>
+                        
+                    
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

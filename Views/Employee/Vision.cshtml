@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    .justify-content-end{
+        display:flex;
+    }
+    li {
+        padding-right: 1rem;
+    }
+
+    #navbar2 {
+        color: black;
+        font-weight: 500;
+        border: 3px solid transparent;
+    }
+
+        #navbar2:hover, #navbar2:focus {
+            color: black;
+            border-bottom: 3px solid red;
+            border-radius: initial;
+        }
+
+        #navbar2:focus {
+            color: darkblue;
+        }
+
+</style>
+</head>
+
+<body>
+
+    <img src="~/images/mv.jpg" class="img-fluid" alt="Responsive image">
+
+    <header class="d-flex justify-content-center mb-4 border-bottom">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a id="navbar2"  asp-controller="Employee" asp-action="Overview" class="nav-link">Overview</a></li>
+            <li class="nav-item"><a id="navbar2" href="#" class="nav-link">Rules </a></li>
+            <li class="nav-item"><a id="navbar2" asp-controller="Employee" asp-action="Vision" class="nav-link">Vision & Mission</a></li>
+        </ul>
+    </header>
+
+
+    <div class="card mb-3  w-50">
+        <img class="card-img-top" src="~/images/qw.gif" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Values</h5>
+            <p class="card-text">
+                Integrity. Integrity is at the core of all our relationships. We build trust and confidence in our customers, suppliers, shareholders, the general public and among ourselves. We consistently demonstrate personal integrity through honesty, trustworthiness, fairness, confidentiality and openness in everything that we do.
+            </p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+
+    <div class="container justify-content-end">
+        <div class="card mb-3  w-50">
+            <img class="card-img-top" src="~/images/vision.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Our Vision</h5>
+                <p class="card-text">
+                    Attracting deposits and developing them, in order to achieve the best financial return for shareholders and depositors. Expanding banking activities to include new sectors and economic activities; such as agriculture, industry, trade and services. Provide financing for investors. Provide security for depositors..
+                </p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="card mb-3  w-50">
+        <img class="card-img-top" src="~/images/mission.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Mission</h5>
+            <p class="card-text">To provide advanced and creative banking products and services for all our clients, both locally and internationally, through a successful team and using advanced programs, techniques and tools that keep up with the advancements in today’s world, in an effort to fulfill the aspirations of our clients, shareholders and employees,  and to reflect our values of social responsibility.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

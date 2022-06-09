@@ -1,0 +1,14 @@
+﻿@{
+ var controller = Convert.ToString(Context.Request.HttpContext.Request.RouteValues["Controller"]);
+  string cLayout = "";
+ if (controller == "Employee") {
+ cLayout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+ }
+ else if(controller == "Homer") {
+ cLayout = "~/Views/Shared/_Layout1.cshtml";
+ }
+else{
+ cLayout = "~/Views/Shared/_Layout.cshtml";
+}
+ Layout = cLayout;
+}

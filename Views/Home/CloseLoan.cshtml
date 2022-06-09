@@ -1,0 +1,115 @@
+﻿@model Valsa.Models.Loan
+
+@{
+    ViewData["Title"] = "Close Application";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Customer Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+
+    <style>
+
+        .gradient-custom {
+            background: #BBD2C5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+</head>
+
+<body class="gradient-custom">
+    <h1 class="display-4 pt-2" style="text-align: center; font-weight: 600;color:white ">Close Application</h1>
+    <br />
+    <h3 class="display-6 pt-2" style="text-align: center; font-weight: 600;color:white ">Are you sure you want to close the application?</h3>
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <div>
+                            <h3>Application Details</h3>
+                            <hr />
+                            <dl class="row">
+                                <dt class="col-sm-4">
+                                    Loan Id
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.loan_id)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Account Number
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.account_number)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Mobile Number
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.mobile_number)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Loan Amount
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.amount)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Employment Type
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.EmpType)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Monthly Income
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.income)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Company Name
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.orgName)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    Loan Purpose
+                                </dt>
+                                <dd class="col-sm-6">
+                                    @Html.DisplayFor(model => model.purpose)
+                                </dd>
+                            </dl>
+
+                            <form asp-action="CloseLoan">
+                                <input type="hidden" asp-for="loan_id" />
+                                <input type="submit" value="Close" class="btn btn-danger" /> |
+                                <a asp-action="EmployeeLoanList">Back to List</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

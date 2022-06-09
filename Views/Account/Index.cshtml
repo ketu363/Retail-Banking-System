@@ -1,0 +1,74 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "User Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Welcome To SWIFT BANK </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <style>
+
+        .gradient-custom {
+            background: #BBD2C5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #292E49, #536976, #BBD2C5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+         img.avatar {
+              width:20%;
+              border-radius: 30%;
+            }
+    </style>
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+    <script type="text/javascript">
+        window.__be = window.__be || {};
+        window.__be.id = "6157088bbe55aa0007228008";
+        (function () {
+            var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+            be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+        })();
+    </script>
+    <!-- End of ChatBot code -->
+</head>
+<body class="gradient-custom">
+<h2 class="text-center" style=color:#ffffff;>User</h2>
+<div class="row justify-content-center">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <form role="form" asp-action="Login" asp-controller="Account" method="post">
+                <div style=text-align:center;>
+                    <img src="~/images/img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+                <div class="form-group">
+                    <label for="CustId">Customer Id</label>
+                    <input type="text" name="CustId" asp-for="CustId" autocomplete="off" class="form-control input-sm" placeholder="Enter your Id">
+                    <span asp-validation-for="CustId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" asp-for="Password" autocomplete="off" class="form-control input-sm" placeholder="Enter your password">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <br>
+                <input type="submit" value="Login" class="btn btn-info btn-block">
+                                  <input type="submit" value="Forgot Password" class="btn btn-info btn-block"><br<br><br><br>
+
+                <a class="btn btn-primary  btn-block" style="background-color: #3b5998" role="button" asp-area="" asp-controller="Login" asp-action="Index">
+                    Login as Admin
+                </a>
+            </form>
+
+          
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
